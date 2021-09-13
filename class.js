@@ -1,4 +1,4 @@
-class Grass {
+class LivingCreature{
     constructor(x, y) {
         this.x = x
         this.y = y
@@ -28,8 +28,10 @@ class Grass {
             }
         }
         return found;
-    }
+   }
+}
 
+class Grass extends LivingCreature {
     mul() {
         this.multiply++;
         let emptyCells = this.chooseCell(0)
@@ -56,20 +58,14 @@ class Grass {
                        }
                   }
             }
-     
     }
-
-
   
 }
-class GrassEater {
-    constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.energy = 8
-        this.directions = []
+class GrassEater extends LivingCreature {
+   constructor(x, y,index) {
+       super(x, y, index );
+       this.energy = 8;
     }
-
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -84,18 +80,8 @@ class GrassEater {
     }
 
     chooseCell(char) {
-        this.getNewCoordinates()
-        let found = []
-        for (const i in this.directions) {
-            let x = this.directions[i][0]
-            let y = this.directions[i][1]
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[x][y] == char) {
-                    found.push(this.directions[i])
-                }
-            }
-        }
-        return found
+       this.getNewCoordinates();
+        return super.chooseCell(char);
     }
 
     move() {
@@ -160,14 +146,12 @@ class GrassEater {
 
 }
 
-class Gishatich {
-    constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.energy = 12
-        this.directions = []
-    }
-
+class Gishatich  extends LivingCreature {
+    constructor(x, y,index) {
+        super(x, y, index );
+        this.energy = 12;
+     }
+    
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -182,18 +166,8 @@ class Gishatich {
     }
 
     chooseCell(char) {
-        this.getNewCoordinates()
-        let found = []
-        for (const i in this.directions) {
-            let x = this.directions[i][0]
-            let y = this.directions[i][1]
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[x][y] == char) {
-                    found.push(this.directions[i])
-                }
-            }
-        }
-        return found
+        this.getNewCoordinates();
+        return super.chooseCell(char);
     }
    
     move() {
@@ -276,14 +250,12 @@ class Flower {
     }
 }
 
-class Caterpillar {
-    constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.energy = 12
-        this.directions = []
-    }
-
+class Caterpillar extends LivingCreature {
+    constructor(x, y,index) {
+        super(x, y, index );
+        this.energy = 12;
+     }
+    
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -298,18 +270,8 @@ class Caterpillar {
     }
 
     chooseCell(char) {
-        this.getNewCoordinates()
-        let found = []
-        for (const i in this.directions) {
-            let x = this.directions[i][0]
-            let y = this.directions[i][1]
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[x][y] == char) {
-                    found.push(this.directions[i])
-                }
-            }
-        }
-        return found
+         this.getNewCoordinates();
+        return super.chooseCell(char);
     }
 
     move() {
@@ -392,13 +354,11 @@ class Caterpillar {
         }
     } 
 }  
-  class Butterfly {
-    constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.energy = 8
-        this.directions = []
-    }
+  class Butterfly extends LivingCreature {
+   constructor(x, y,index) {
+        super(x, y, index );
+        this.energy = 8;
+     }
 
     getNewCoordinates() {
         this.directions = [
