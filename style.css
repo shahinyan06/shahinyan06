@@ -1,48 +1,37 @@
-table{
-    margin: 0;
-    padding: 0;
-    border: 1px solid black;
-    float: right;
-}
-tr td{
-    border: 1px solid black;
-    border-right-style:none ;
-    margin: 0;
-    font-size: large;
-    font-family: sans-serif;
-}
-#gray{
-    background-color: #acacac;
-}
-#green{
-    background-color: #638005;
-}
-#Yellow{
-    background-color: #ffae0d;
-    
-}
-#red{
-    background-color: #ff0000;
-}
-#pink{
-    background-color: #ffc0cb;
-}
-#brown{
-    background-color: #4f2e0d;
-}
-#purple{
-    background-color: #795bfc
+body {
+    font-family: Arial, Helvetica, sans-serif!important;
 }
 
-#first{
-    background-color: black;
+#chat {
+    width: 1000px;
+    margin:auto;
+    background-color: #FAFAFA;
+    border: 1px solid #acacac;
+    padding: 1em;   
+    text-align: center;
+}
+
+#message {
+    text-align: center;
+    border: 2px solid #3498db;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    font-size: 1.25em;
+}
+
+#submit {
+    width: 175px;
+    height: 50px;
+    border-radius: 0;
+    background-color: #43A047;
     color: white;
+    font-size: 1.25em;
+    border: none;
 }
-.second{
-    background-color: rgb(180, 180, 180);
-    
-}
-.third{
-    background-color: rgb(112, 112, 112);
-    color: rgb(246, 233, 246);
+
+#chat_p {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #34495e;
 }
